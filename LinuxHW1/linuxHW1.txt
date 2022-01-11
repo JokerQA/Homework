@@ -1,0 +1,59 @@
+1. Посмотреть где я  - pwd
+2. Создать папку - mkdir linuxHomework
+3. Зайти в папку - cd linuxHomework
+4. Создать 3 папки - mkdir paper1 paper2 paper3
+5. Зайти в любую папку - cd paper2
+6. Создать 5 файлов -touch text1.txt text2.txt text3.txt json1.json json2.json
+7. Создать 3 папки - mkdir pape1 pape2 pape3
+8. Вывести содержимое папки - ls -la
+9. Открыть любой txt файл - vim text1.txt
+10.Написать туда-что нибудь - i(insert) Какой-нибудь текст
+11.Сохранить и выйти -ESCAPE, затем :wq
+12.Выйти из папки на уровень выше - cd ..
+13.Переместить любые 2 файлы, в любую другую папку - mv json1.json text2.txt pape3/
+14.Скопировать два любых файла - cp json2.json text3.txt pape1/
+15.Найти файл по имени - find -name json1.json
+16.Просмотреть содержимое в реальном времени - tail -f text1.txt
+17.Вывести несколько первых строк текстового файла - head -n 2 text1.txt
+18.Вывести несколько последних строк текстового файла - tail -n 2 text1.txt
+19.Содержимое файла командой less - text1.txt
+20.Вывести дату и время - date +"%D %T"
+
+Задание *
+
+1. curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+{"age":"32","family":{"children":[["Alex",24],["Kate",12]],"pets":{"cat":{"age":3,"name":"Sunny"},"dog":{"age":4,"name":"Luky"}},"u_salary_1_5_year":4000},"name":"Vadim","salary":1000}
+
+2. touch scriptname.sh
+vim scriptname.sh
+insert
+
+Скрипт:
+
+#! /bin/bash
+
+# Домашка 1
+                        
+cd comeHere
+
+mkdir paper_1 paper_2 paper_3
+
+cd paper_1
+
+touch text1.txt text2.txt text3.txt json1.json json2.json
+
+mkdir pape1 pape2 pape3
+
+ls -la
+
+mv text1.txt pape1
+
+mv json1.json pape2
+
+esapce:wq
+
+
+chmod +x scriptname.sh
+source criptname.sh
+
+
