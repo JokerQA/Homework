@@ -1,0 +1,73 @@
+GIT Homework 1
+
+Как отправить ДЗ на проверку.
+ 1. Создайте текстовый файл как в первом ДЗ по Terminal.
+ 2. Сценарий перенесите в этот файл.
+ 3. На против каждого действия - напишите команду в GitBash
+
+Файл со сценарием и ссылку на свой гит хаб отправляйте менторам на проверку.
+
+JSON
+ 4. Создать внешний репозиторий c названием JSON. | Repositories -> New -> Repository name JSON -> Public -> Add a README file - Create Repository
+ 5. Клонировать репозиторий JSON на локальный компьютер. | git clone https://github.com/JokerQA/JSON.git
+ 6. Внутри локального JSON создать файл “new.json”. | cd JSON - > touch new.json
+ 7. Добавить файл под гит. | git add new.json
+ 8. Закоммитить файл. |  git commit -m "First JSON repo commit"
+ 9. Отправить файл на внешний GitHub репозиторий. | git push
+ 10. Отредактировать содержание файла “new.json” - написать информацию о себе 
+ (ФИО, возраст, количество домашних животных, будущая желаемая зарплата).Всё написать в формате JSON. | vim new.json -> insert -> ESC:wq
+ 11. Отправить изменения на внешний репозиторий. | git add new.json -> git commit -m " About me" - > git push
+ 12. Создать файл preferences.json | touch preferences.json
+ 13. В файл preferences.json добавить информацию о своих предпочтениях 
+ (Любимый фильм, любимый сериал, любимая еда, любимое время года, страна которую хотели бы посетить) в формате JSON. | vim preferences.json -> insert -> ESC:wq
+ 14. Создать файл sklls.json добавить информацию о скиллах которые будут изучены на курсе в формате JSON | touch skills.json - > vim preferences.json -> insert -> ESC:wq
+ 15. Отправить сразу 2 файла на внешний репозиторий. | git add . -> git commit -m "Add preferences and skills JSON" -> git push
+ 16. На веб интерфейсе создать файл bug_report.json. | JSON repository -> add file - > create new file bug_report.json -> commit new file "Create bug_report" -> commit to the main branch
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе. | save file
+ 18. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт в формате JSON. | JSON/bug_report.json -> Edit this files
+ 19. Сделать Commit changes (сохранить) изменения на веб интерфейсе. | Commit changes - > Нажать на зеленую кнопку Commit changes
+ 20. Синхронизировать внешний и локальный репозиторий JSON | git fetch -> git pull
+
+XML
+ 21. Создать внешний репозиторий c названием XML. | Repositories -> New -> Repository name XML -> Public -> Add a README file - Create Repository
+ 22. Клонировать репозиторий XML на локальный компьютер. | git clone https://github.com/JokerQA/XML.git
+ 23. Внутри локального XML создать файл “new.xml”.| cd XML - > touch new.xml
+ 24. Добавить файл под гит. | git add new.xml
+ 25. Закоммитить файл. | git commit -m "new xml add"
+ 26. Отправить файл на внешний GitHub репозиторий. | git push
+ 27. Отредактировать содержание файла “new.xml” - написать информацию о себе 
+ (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате XML. | vim new.xml -> insert -> ESC:wq
+ 28. Отправить изменения на внешний репозиторий. git add new.xml -> git commit -m " About me XML" - > git push
+ 29. Создать файл preferences.xml | touch preferences.xml
+ 30. В файл preferences.xml добавить информацию о своих предпочтениях 
+ (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате XML. | vim preferences.xml -> insert -> ESC:wq
+ 31. Создать файл sklls.xml добавить информацию о скиллах которые будут изучены на курсе в формате XML | touch skills.xml - > vim preferences.xml -> insert -> ESC:wq
+ 32. Сделать коммит в одну строку. | git commit -m " Added 2 file XML" Коммит делаем после git add .
+ 33. Отправить сразу 2 файла на внешний репозиторий. | git add . - > git commit -> git push
+ 34. На веб интерфейсе создать файл bug_report.xml. | XML repository -> add file - > create new file bug_report.xml -> commit new file "Create bug_report" -> commit to the main branch
+ 35. Сделать Commit changes (сохранить) изменения на веб интерфейсе. | save file
+ 36. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML. | XML/bug_report.xml -> Edit this files
+ 37. Сделать Commit changes (сохранить) изменения на веб интерфейсе. | Commit changes - > Нажать на зеленую кнопку Commit changes
+ 38. Синхронизировать внешний и локальный репозиторий XML | git fetch -> git pull
+
+TXT
+ 1. Создать внешний репозиторий c названием TXT. | Repositories -> New -> Repository name TXT -> Public -> Add a README file - Create Repository
+ 2. Клонировать репозиторий TXT на локальный компьютер. | git clone https://github.com/JokerQA/TXT.git
+ 3. Внутри локального TXT создать файл “new.txt”. | cd TXT - > touch new.txt
+ 4. Добавить файл под гит. | git add new.txt
+ 5. Закоммитить файл. | git commit -m " create new.txt"
+ 6. Отправить файл на внешний GitHub репозиторий. | git push
+ 7. Отредактировать содержание файла “new.txt” - написать информацию о себе 
+ (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате TXT. | vim new.txt -> insert -> ESC:wq
+ 8. Отправить изменения на внешний репозиторий. | git add new.txt -> git commit -m " txt added" - > git push
+ 9. Создать файл preferences.txt | touch preferences.txt
+ 10. В файл preferences.txt” добавить информацию о своих предпочтениях 
+ (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате TXT. | vim preferences.txt -> insert -> ESC:wq
+ 11. Создать файл sklls.txt добавить информацию о скиллах которые будут изучены на курсе в формате TXT | touch skills.txt
+ 12. Сделать коммит в одну строку. | git commit -m " add 2 files"
+ 13. Отправить сразу 2 файла на внешний репозиторий. git add. -> git push
+ 14. На веб интерфейсе создать файл bug_report.txt. TXT repository -> add file - > create new file bug_report.txt -> commit new file "Create bug_report" -> commit to the main branch
+ 15. Сделать Commit changes (сохранить) изменения на веб интерфейсе. | save file
+ 16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт в формате TXT. | TXT/bug_report.txt -> Edit this files
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе. | Commit changes - > Нажать на зеленую кнопку Commit changes
+ 18. Синхронизировать внешний и локальный репозиторий TXT | git fetch -> git pull
