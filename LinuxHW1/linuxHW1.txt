@@ -21,8 +21,13 @@
 
 Задание *
 
-1. curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
-{"age":"32","family":{"children":[["Alex",24],["Kate",12]],"pets":{"cat":{"age":3,"name":"Sunny"},"dog":{"age":4,"name":"Luky"}},"u_salary_1_5_year":4000},"name":"Vadim","salary":1000}
+1. curl "curl "http://162.55.220.72:5005/terminal-hw-request"
+
+Ответ: % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   237  100   237    0     0   1986      0 --:--:-- --:--:-- --:--:--  2008{"Intro":"Hello!! This is your the first response from server","Tasks":{"Task_1":"
+Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)","result":["Your_String","Your_number"]}}
+
 
 2. touch scriptname.sh
 vim scriptname.sh
