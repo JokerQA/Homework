@@ -1,0 +1,16 @@
+title: На странице оплаты товара не работает кнопка оплатить товар
+Steps_to_reproduce: 1.Открыть сайт www.kupi-prodai.ru
+		    2. Перейти в раздел товаров 
+		    3. Выбрать товар 
+		    4. Перейти в корзину оплаты 
+	            5. Нажать оплатить товар
+Excepted_result: Товар оплачен, спасибо за покупку
+Actual_result: Error 404
+Priority: High
+Severity: Blocker
+Enviroment: OS WINDOWS 10 , Google Chrome
+Attachments: screen.png
+Author: Vlad Nikitin
+Version: 1.0
+Status: Assigned
+Assigned_to: Alexandr
