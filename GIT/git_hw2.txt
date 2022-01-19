@@ -96,13 +96,3 @@ git push
 git checkout main
 git fetch
 git pull
-
-
-
-
-
-
-1. Открыть сайт http://taulia.portnov.com/
-2. В меню сайта перейти на вкладку "Invoices"
-3. В форме поиска Search my invoices нажать на поле "Results per page" и в выпадающем списке выбрать количество записей 10
-4. В форме поиска Search my invoices нажать на кнопку "Search"
