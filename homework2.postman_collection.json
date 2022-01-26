@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "c4bd40be-08b2-4d38-b508-f13220f6446d",
+		"name": "homework2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/first",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/first",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"first"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_info_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"let name_s_request = \"Vlad\";\r",
+							"let age_s_request = \"26\";\r",
+							"let salary_r_request = 50000; \r",
+							"\r",
+							"pm.test(\"Check name\", function () {\r",
+							"    pm.expect(jsonData.name).to.eql(name_s_request);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check age\", function () {\r",
+							"    pm.expect(jsonData.age).to.eql(age_s_request);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check salary\", function () {\r",
+							"    pm.expect(jsonData.salary).to.eql(salary_r_request);\r",
+							"});\r",
+							"\r",
+							"let reqBodyName = pm.request.body.formdata.get(\"name\"); // Забираем из реквеста значение name\r",
+							"let reqBodyAge = pm.request.body.formdata.get(\"age\"); // Забираем из реквеста значение age\r",
+							"let reqBodySalary = parseInt(pm.request.body.formdata.get(\"salary\")); // Забираем из реквеста значение salary\r",
+							"\r",
+							"// Сравниваем поле name из ответа и запроса\r",
+							"pm.test(\"Response name = Request name\", function () {\r",
+							"    pm.expect(jsonData.name).to.eql(reqBodyName);\r",
+							"});\r",
+							"\r",
+							"// Сравниваем поле age из ответа и запроса\r",
+							"pm.test(\"Response age = Request age\", function () {\r",
+							"    pm.expect(jsonData.age).to.eql(reqBodyAge);\r",
+							"});\r",
+							"\r",
+							"// Сравниваем поле salary из ответа и запроса\r",
+							"pm.test(\"Response salary = Request salary\", function () {\r",
+							"    pm.expect(jsonData.salary).to.eql(reqBodySalary);\r",
+							"});\r",
+							"\r",
+							"console.log(jsonData.family);\r",
+							"\r",
+							"let u_salary_1_5_year = jsonData.family.u_salary_1_5_year\r",
+							"\r",
+							"// Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)\r",
+							"\r",
+							"pm.test(\"Сравнение salary\", function () {\r",
+							"    pm.expect(u_salary_1_5_year).to.eql(reqBodySalary*4);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Vlad",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "26",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "50000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip}}/user_info_3",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
