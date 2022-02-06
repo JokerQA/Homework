@@ -181,6 +181,123 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "new_data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Спарсить response body в json.\r",
+							"let response_body = pm.response.json();\r",
+							"\r",
+							"var schema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"age\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"salary\": {\r",
+							"      \"type\": \"array\",\r",
+							"      \"items\": [\r",
+							"        {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      ]\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"age\",\r",
+							"    \"name\",\r",
+							"    \"salary\"\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.test('Schema validation', function () {\r",
+							"    pm.expect(tv4.validate(response_body, schema)).to.be.true;\r",
+							"});\r",
+							"\r",
+							"// rate = 2\r",
+							"pm.test(\"rate = 2\", function () {\r",
+							"    pm.expect(response_body.salary[1]/response_body.salary[0]).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"// rate = 3\r",
+							"pm.test(\"rate = 3\", function () {\r",
+							"    pm.expect(response_body.salary[2]/response_body.salary[0]).to.eql(3);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate elements\", function () {\r",
+							"  pm.expect(parseInt(response_body.salary[2])).to.be.above(parseInt(response_body.salary[1]))\r",
+							"  pm.expect(parseInt(response_body.salary[2])).to.be.above(parseInt(response_body.salary[0]))\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Vlad",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "26",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "50000",
+							"type": "text"
+						},
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/new_data",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"new_data"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
