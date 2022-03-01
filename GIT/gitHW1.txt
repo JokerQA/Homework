@@ -76,25 +76,25 @@ JSON
 		vim preferences.json 
 		insert 
 {
- 1:"Base QA Theory",
- 2:"Client-side architecture",
- 3:"HTTP methods",
- 4:"Server response",
- 5:"JSON and XML",
- 6:"API,Postman",
- 7:"Server logs",
- 8:"Charles and Fiddler",
- 9:"Dev Tools",
- 10:"VPN",
- 11:"Mobile Testing"
- 12:"Guidelins IOS and Android",
- 13:"xCode",
- 14:"Linux",
- 15:"GIT",
- 16:"SQL.Postgress",
- 17:"Jmeter",
- 18:"Scrum",
- 19:"Python"
+	"1": "Base QA Theory",
+	"2": "Client-side architecture",
+	"3": "HTTP methods",
+	"4": "Server response",
+	"5": "JSON and XML",
+	"6": "API,Postman",
+	"7": "Server logs",
+	"8": "Charles and Fiddler",
+	"9": "Dev Tools",
+	"10": "VPN",
+	"11": "Mobile Testing",
+	"12": "Guidelins IOS and Android",
+	"13": "xCode",
+	"14": "Linux",
+	"15": "GIT",
+	"16": "SQL.Postgress",
+	"17": "Jmeter",
+	"18": "Scrum",
+	"19": "Python"
 }
 		ESC:wq
 		
@@ -116,23 +116,24 @@ JSON
  18. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт в формате JSON. 
 		JSON/bug_report.json  
 		Edit this files
-		{
-		"title":"На странице оплаты товара не работает кнопка оплатить товар",
-		"Steps_to_reproduce":"1.Открыть сайт www.kupi-prodai.ru 
-					  2. Перейти в раздел товаров 
-					  3. Выбрать товар 
-					  4. Перейти в корзину оплаты 
-					  5. Нажать оплатить товар",
-		"Excepted_result":"Товар оплачен, спасибо за покупку",  
-		"Actual_result":"Error 404",
-		"Priority":"High",
-		"Severity":"Blocker",
-		"Enviroment":"OS WINDOWS 10 , Browser Google Chrome",
-		"Attachments":"screen.png",
-		"Author":"Vlad Nikitin",
-		"Version":"1.0",
-		"Assigned to" : " Alexandr",
-		"Status":"Assigned"  
+{
+	"Id": "3",
+	"Summary": "В колонке статус неверно указана подсказка к полю Paid",
+	"Steps_to_reproduce": ["1. Открыть сайт http://taulia.portnov.com/",
+						   "2. В меню сайта перейти на вкладку Invoices",
+		                   "3. В форме поиска Search my invoices нажать на кнопку Search",
+		                   "4. Перейти на 4 запись и навести мышкой на иконку оплаты"
+	],
+	"Actual_result": " Отображается Approved",
+	"Excepted_result": "Должно отображаться Paid",
+	"Severity": "Trivial",
+	"Priority": "low",
+	"Enviroment": "All os, all browsers",
+	"Attachments": "screen.jpeg",
+	"Status": "Assigned",
+	"Author": "Me",
+	"Version": "1.0"
+
 }
 		
 		
@@ -173,14 +174,16 @@ XML
 		vim new.xml 
 		insert 
 
-		<about_me>
-		<firstname>Vladislav</firstname>
-		<surname>Nikitin</surname>
-		<patronymic>Igorevich</patronymic>
-		<age>26</age>
-		<pets_count>3</pets_count>
-		<future_salary>50000</future_salary>
-		</about_me>
+	<?xml version="1.0" encoding="UTF-8"?>
+	<about_me>
+	<firstname>Vladislav</firstname>
+	<surname>Nikitin</surname>
+	<patronymic>Igorevich</patronymic>
+	<age>26</age>
+	<pets_count>3</pets_count>
+	<future_salary>50000</future_salary>
+	</about_me>
+
 
 		
 		ESC:wq
@@ -198,6 +201,7 @@ XML
 		vim preferences.xml 
 		insert
 
+	<?xml version="1.0" encoding="UTF-8"?>
 	<preferences>
 	<favourite_film>The Fast and The Furios</favourite_film>
 	<favourite_serial>Voroniny</favourite_serial>
@@ -212,7 +216,9 @@ XML
 		touch skills.xml 
 		vim skills.xml 
 		insert 
-		 <theory>
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <theory>
   <theory1>Base QA Theory</theory1>
   <theory2>Client-side architecture</theory2>
   <theory3>HTTP methods</theory3>
@@ -258,27 +264,27 @@ XML
  36. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML.  
 		XML/bug_report.xml 
 		Edit this files
-		
-		<?xml version="1.0" encoding="UTF-8" ?>
-		<root>
-		<title>На странице оплаты товара не работает кнопка оплатить товар</title>
-		<Steps_to_reproduce>1.Открыть сайт www.kupi-prodai.ru 
-							2. Перейти в раздел товаров 
-							3. Выбрать товар 
-							4. Перейти в корзину оплаты 
-							5. Нажать оплатить товар
-		</Steps_to_reproduce>
-		<Excepted_result>Товар оплачен, спасибо за покупку</Excepted_result>
-		<Actual_result>Error 404</Actual_result>
-		<Priority>High</Priority>
-		<Severity>Blocker</Severity>
-		<Enviroment>OS WINDOWS 10 , Browser Google Chrome</Enviroment>
-		<Attachments>screen.png</Attachments>
-		<Author>Vlad Nikitin</Author>
-		<Version>1.0</Version>
-		<Status>Assigned</Status>
-		<Assigned_to> Alexandr</Assigned_to>
-		</root>
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <bug_id_3>
+   <Id>3</Id>
+   <Summary>В колонке статус неверно указана подсказка к полю Paid</Summary>
+    <Steps_to_reproduce>
+      <element1>1. Открыть сайт http://taulia.portnov.com/</element1>
+      <element2>2. В меню сайта перейти на вкладку Invoices</element2>
+      <element3>3. В форме поиска Search my invoices нажать на кнопку Search</element3>
+      <element4>4. Перейти на 4 запись и навести мышкой на иконку оплаты</element4>
+   </Steps_to_reproduce>
+   <Actual_result> Отображается Approved</Actual_result>
+   <Excepted_result>Должно отображаться Paid</Excepted_result>
+   <Severity>Trivial</Severity>
+   <Priority>low</Priority>
+   <Enviroment>All os, all browsers</Enviroment>
+   <Attachments>screen.jpeg</Attachments>
+   <Status>Assigned</Status>
+   <Author>Me</Author>
+   <Version>1.0</Version>
+   </bug_id_3>
 		
  37. Сделать Commit changes (сохранить) изменения на веб интерфейсе.  
 		Commit changes  
@@ -316,12 +322,14 @@ TXT
  7. Отредактировать содержание файла “new.txt” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате TXT. 
 		vim new.txt 
 		insert 
-		firstname Vladislav
-		surname Nikitin
-		patronymic Igorevich
-		age 26
-		pets_count 3
-		future_salary 50000
+		
+firstname Vladislav
+surname Nikitin
+patronymic Igorevich
+age 26
+pets_count 3
+future_salary 50000
+
 		ESC:wq
 		
  8. Отправить изменения на внешний репозиторий. 
@@ -335,11 +343,13 @@ TXT
  10. В файл preferences.txt” добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате TXT. 
 		vim preferences.txt 
 		insert
-			favourite film - The Fast and The Furios
-			favourite serial - Voroniny
-			favourite food - KFC
-			favourite season - summer
-			country for travel - I want travel to Spain
+			
+favourite film - The Fast and The Furios
+favourite serial - Voroniny
+favourite food - KFC
+favourite season - summer
+country for travel - I want travel to Spain
+
 		ESC:wq
 		
  11. Создать файл sklls.txt добавить информацию о скиллах которые будут изучены на курсе в формате TXT  
@@ -388,22 +398,22 @@ TXT
 		TXT/bug_report.txt 
 		Edit this files
 		
-		title На странице оплаты товара не работает кнопка оплатить товар
-		Steps_to_reproduce: 1.Открыть сайт www.kupi-prodai.ru
-		    2. Перейти в раздел товаров 
-		    3. Выбрать товар 
-		    4. Перейти в корзину оплаты 
-	            5. Нажать оплатить товар
-		Excepted_result Товар оплачен, спасибо за покупку
-		Actual_result Error 404
-		Priority High
-		Severity Blocker
-		Enviroment OS WINDOWS 10 , Browser Google Chrome
-		Attachments screen.png
-		Author Vlad Nikitin
-		Version 1.0
-		Status Assigned
-		Assigned_to Alexandr
+id:3
+title: В колонке статус неверно указана подсказка к полю Paid
+Steps_to_reproduce: 1. Открыть сайт http://taulia.portnov.com/
+          	    2. В меню сайта перейти на вкладку "Invoices"
+                    3. В форме поиска Search my invoices нажать на кнопку "Search"
+	            4.Перейти на 4 запись и навести мышкой на иконку оплаты
+
+Excepted_result: Должно отображаться “Paid”
+Actual_result:   Отображается “Approved”
+Priority: Trivial
+Severity: Low
+Enviroment: All os, all browsers
+Attachments: screen.png
+Author: Me
+Version: 1.0
+Status: Assigned
 		
  17. Сделать Commit changes (сохранить) изменения на веб интерфейсе. 
 		Commit changes  
