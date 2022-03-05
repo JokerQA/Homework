@@ -1,4 +1,6 @@
-/*1.Создать таблицу employees*/
+/*1.Создать таблицу employees
+- id. serial,  primary key,
+- employee_name. Varchar(50), not null*/
 create table employess(
 	id serial primary key,
 	employee_name varchar(50) not null
@@ -8,7 +10,9 @@ create table employess(
 insert into employess(employee_name)
 values('Vladislav')
 
-/*3.Создать таблицу salary*/
+/*3.Создать таблицу salary
+- id. Serial  primary key,
+- monthly_salary. Int, not null*/
 create table salary(
 id serial primary key,
 monthly_salary int not null
@@ -32,18 +36,24 @@ values(1000),
       (2400),
       (2500)
  
-/*5.Создать таблицу employee_salary*/
+/*5.Создать таблицу employee_salary
+- id. Serial  primary key,
+- employee_id. Int, not null, unique
+- salary_id. Int, not null*/
 create table employee_salary(
 id serial primary key,
 employee_id int not null unique,
 salary_id int not null
 )
 
-/*6.Наполнить таблицу employee_salary 40 строками. Здесь я вновь воспользовался python скриптом и сгенерил 40 записей*/
+/*6.Наполнить таблицу employee_salary 40 строками:
+- в 10 строк из 40 вставить несуществующие employee_id. Здесь я вновь воспользовался python скриптом и сгенерил 40 записей*/
 insert into employee_salary(employee_id,salary_id)
 values(82,4)
 
-/*7.Создать таблицу roles*/
+/*7.Создать таблицу roles
+- id. Serial  primary key,
+- role_name. int, not null, unique*/
 create table roles(
 id serial primary key,
 role_name int not null unique
@@ -76,7 +86,11 @@ values('Junior Python developer'),
       ('Middle Automation QA engineer'),
       ('Senior Automation QA engineer')
 
-/*10.Создать таблицу roles_employee*/
+/*10.Создать таблицу roles_employee
+- id. Serial  primary key,
+- employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
+- role_id. Int, not null (внешний ключ для таблицы roles, поле id)
+*/
 create table roles_employee(
 id serial primary key,
 employee_id int not null unique,
@@ -90,5 +104,3 @@ foreign key (role_id)
 /*11.Наполнить таблицу roles_employee 40 строками. 1 запись вручную, остальные python скриптом*/
 insert into roles_employee (employee_id,role_id)
 values(1,1)
-
-
