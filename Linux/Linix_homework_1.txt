@@ -1,0 +1,67 @@
+Первое ДЗ 
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я -> pwd
+2) Создать папку -> mkdir mainRepo
+3) Зайти в папку -> cd mainRepo
+4) Создать 3 папки -> mkdir rep1 rep2 rep3
+5) Зайти в любую папку -> cd rep1
+6) Создать 5 файлов (3 txt, 2 json) -> touch file1.txt file2.txt file3.txt file4.json file5.json
+7) Создать 3 папки -> mkdir paper1 paper2 paper3
+8. Вывести список содержимого папки -> ls -la , где l-вывод полной информации, a - показать скрытые файлы
+9) Открыть любой txt файл -> vim file1.txt , я использую редактор vim
+10) Написать туда что-нибудь, любой текст. В vim нажать i -> пишем текст 
+11) Сохранить и выйти. -> Жмем клавишу esc, затем :wq
+12) Выйти из папки на уровень выше -> cd..
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. -> mv file4.json file5.json ../rep2
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. -> cp file4.json file5.json ../rep1
+15) Найти файл по имени -> find ~/Рабочий\ стол/ -type f -name "linux*"
+16) просмотреть содержимое в реальном времени -> tail -F file1.txt
+17) вывести несколько первых строк из текстового файла -> head -n 2 file1.txt
+18) вывести несколько последних строк из текстового файла -> tail -n 2 file1.txt
+19) просмотреть содержимое длинного файла -> file1.txt
+20) вывести дату и время -> date +"%D %T"
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+
+http://162.55.220.72:5005/terminal-hw-request
+
+curl http://162.55.220.72:5005/terminal-hw-request
+
+{"Intro":"Hello!! This is your the first response from server","Tasks":{"Task_1":"Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)","result":["Your_String","Your_number"]}}
+
+curl "http://162.55.220.72:5005/get_method?name=Vlad&age=27"
+["Vlad","27"]
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+#! /bin/bash
+
+# Домашка 1
+                        
+cd comeHere
+
+mkdir paper_1 paper_2 paper_3
+
+cd paper_1
+
+touch text1.txt text2.txt text3.txt json1.json json2.json
+
+mkdir pape1 pape2 pape3
+
+ls -la
+
+mv text1.txt pape1
+
+mv json1.json pape2
+
+esapce:wq
+
+
+chmod +x scriptname.sh
+source criptname.sh
+
+
